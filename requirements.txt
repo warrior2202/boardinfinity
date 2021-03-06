@@ -8,4 +8,4 @@ Wikipedia-API==0.5.4
 
 Flask==1.1.2
 pymediawiki==0.7.0
-spacy-streamlit==1.0.0rc1
+
