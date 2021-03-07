@@ -7,15 +7,15 @@ import json
 import wikipedia
 import streamlit as st 
 import wikipediaapi
-import spacy_streamlit
+
 wiki_wiki = wikipediaapi.Wikipedia('en')
 
 wikipedia1 = MediaWiki()
-from spacy_streamlit import visualize_ner
 
 
 
 
+HTML_WRAPPER = """<div style="overflow-x: auto; border: 1px solid #e6e9ef; border-radius: 0.25rem; padding: 1rem">{}</div>"""
 
 
 
@@ -31,27 +31,45 @@ def index():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
     Wiki = st.text_input("wiki","Type Here")
-    if st.button("Predict"):
+    if st.button("Only summarry to NER"):
         extract(Wiki)
+    elif st.button("Entire Text to NER"):
+        extract2(Wiki)
         
 	
 
 
 
 def extract(wiki):
-       raw_test2 = wikipedia1.page(wiki)
-       docx = nlp(raw_test2.summary)
-       visualize_ner(docx, labels=nlp.get_pipe("ner").labels)
-       
-      
-      
-			
+    raw_test2 = wiki_wiki.page(wiki)
+    if(raw_test2.exists):
+        docx = nlp(raw_test2.summary)
+        html = displacy.render(docx, style="ent")
+        html = html.replace("\n", " ")
+        st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
+    #    visualize_ner(docx, labels=nlp.get_pipe("ner").labels)
+    else:
+        index()
+
+# Newlines seem to mess with the rendering
+        
+        
 
 
-		
-
-
-
-
+def extract2(wiki):
+    raw_test2 = wiki_wiki.page(wiki)
+    if(raw_test2.exists):
+            docx = nlp(raw_test2.summary)
+            html = displacy.render(docx, style="ent")
+            html = html.replace("\n", " ")
+            st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
+    else:
+            index()
 if __name__ == '__main__':
 	index()
+
+
+
+
+       
+           
