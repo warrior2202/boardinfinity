@@ -59,7 +59,7 @@ def extract(wiki):
 def extract2(wiki):
     raw_test2 = wiki_wiki.page(wiki)
     if(raw_test2.exists):
-            docx = nlp(raw_test2.summary)
+            docx = nlp(raw_test2.text)
             html = displacy.render(docx, style="ent")
             html = html.replace("\n", " ")
             st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
