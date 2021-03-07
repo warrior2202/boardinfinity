@@ -1,11 +1,11 @@
 # Board Infinity Intern 
 
-Scrape data from wiki and then perform ner on that data and display it using streamlit.
+Scrape data from wiki and then perform NER on that data and display it using streamlit.
 
 
 
 
-## Link
+## Live Demo
 
 [https://boardinfintyintern.herokuapp.com/](https://boardinfintyintern.herokuapp.com/)
 
@@ -71,13 +71,11 @@ To run the streamlit app, run the following command
 
 
 
-## Future Scope
 
-Better UI/UX 
 
 
 ## Reference
-Streamlit- https://www.streamlit.io/
-
+Streamlit- https://www.streamlit.io/ \
+Heroku- https://heroku.com/
 
 
