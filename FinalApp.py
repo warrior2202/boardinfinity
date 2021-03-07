@@ -31,9 +31,9 @@ def index():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
     Wiki = st.text_input("wiki","Type Here")
-    if st.button("Only summarry to NER"):
+    if st.button("Only summary to NER"):
         extract(Wiki)
-    elif st.button("Entire Text to NER"):
+    elif st.button("Entire page to NER"):
         extract2(Wiki)
         
 	
