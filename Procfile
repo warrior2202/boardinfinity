@@ -1,1 +1,2 @@
-web: sh setup.sh && streamlit run FinalApp.py
+web: sh setup.sh && echo PORT $PORT
+streamlit run  --server.port $PORT FinalApp.py
