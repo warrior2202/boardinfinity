@@ -7,7 +7,7 @@ Scrape data from wiki and then perform ner on that data and display it using str
 
 ## Link
 
-https://boardinfintyintern.herokuapp.com/
+[https://boardinfintyintern.herokuapp.com/](https://boardinfintyintern.herokuapp.com/)
 
 
 
@@ -41,7 +41,7 @@ To run the streamlit app, run the following command
 
 
 
-##Results
+
 
 
 
@@ -66,11 +66,18 @@ To run the streamlit app, run the following command
 
 
 ## Results
+![](https://i.imgur.com/Jn7d2XG.gif)
+
+
 
 
 ## Future Scope
 
+Better UI/UX 
 
 
 ## Reference
+Streamlit- https://www.streamlit.io/
+
+
 
